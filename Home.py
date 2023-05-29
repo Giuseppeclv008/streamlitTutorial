@@ -12,4 +12,20 @@ st.set_page_config(
         'About': "# Corso di *Basi di Dati*"
     }
 )
+
+
+
+with st.sidebar:
+    if st.button("premi", type="primary"):
+        progress_text = "Operation in progress. Please wait."
+        my_bar = st.progress(0, text=progress_text)
+
+        for percent_complete in range(100):
+            time.sleep(0.1)
+            my_bar.progress(percent_complete + 1, text=progress_text)
+
+
+
+
+
 st.title("📈 La mia App")
